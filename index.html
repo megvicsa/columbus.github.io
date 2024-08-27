@@ -248,7 +248,7 @@
                         { type: 'J1772', value: '1' }
                     ],
 
-                energySource: '80% Grid, 20% Renewable',
+                energySource: '80% grid, 20% renewable',
 
                 chargingFee: '$0.00/$1.00',
                 chargingFeeRate: 'per kWh from 9:00 AM to 5:00 PM/after hours',
@@ -287,7 +287,7 @@
                     ],
       
 
-                energySource: '89% Grid, 11% Renewable',
+                energySource: '89% grid, 11% renewable',
 
                 chargingFee: '$0.00/$1.00',
                 chargingFeeRate: 'per kWh from 9:00 AM to 5:00 PM/after hours',
@@ -512,7 +512,7 @@
 
             let waitTimeDetails = station.waitTime.map(item => `The estimated wait time of socket ${item.type} is ${item.value} minutes.`).join('<br><br>');
             let plugDetails = station.plugNumb.map(item => `There are ${item.value} number of socket type ${item.type}.`).join('<br><br>');
-            let chargeTimeDetails = station.chargeTime.map(item => `The estimated charging time of socket ${item.type} is ${item.value} minutes to full.`).join('<br><br>');
+            let chargeTimeDetails = station.chargeTime.map(item => `The estimated charging time of socket ${item.type} is ${item.value} minutes to fully charge your car.`).join('<br><br>');
             let socketAvailabilityDetails = station.socketAvalability.map(item => `There are ${item.value} available number of socket type ${item.type}.`).join('<br><br>');
 
             return `
@@ -531,7 +531,7 @@
 
                     <button class="popup-button" onclick="showMoreInfo('${station.name}', 'energySource', '<b>Energy source at station:</b><br>${station.energySource}.', '${boxId}')">Energy Source at Station</button>
                     <button class="popup-button" onclick="showMoreInfo('${station.name}', 'fees', '<b>Cost to charge:</b> ${station.chargingFee}. <br><br> The price ${station.chargingFeeRate} is ${station.chargingFee}.', '${boxId}')">Cost to Charge</button>
-                    <button class="popup-button" onclick="showMoreInfo('${station.name}', 'parking', '<b>Cost to park at station:</b> ${station.parkingFee}. <br><br> The price of parking your car at the charging station ${station.parkingFeeRate} is ${station.parkingFee}.', '${boxId}')">Cost to Park at Station</button>
+                    <button class="popup-button" onclick="showMoreInfo('${station.name}', 'parking', '<b>Cost to park at station:</b> ${station.parkingFee}. <br><br> The price of parking your car at the charging station ${station.parkingFeeRate} is ${station.parkingFee.toLowerCase()}.', '${boxId}')">Cost to Park at Station</button>
                     <button class="popup-button" onclick="showMoreInfo('${station.name}', 'coffee', '<b>Coffe shop:</b> ${station.coffee}', '${boxId}')">Coffee Shop</button>
                     <button class="popup-button" onclick="showMoreInfo('${station.name}', 'grocery', '<b>Grocery store:</b> ${station.grocery}', '${boxId}')">Grocery Store</button>
                     <button class="popup-button" onclick="showMoreInfo('${station.name}', 'sportsClothes', '<b>Sports/Clothing store:</b> ${station.sportsClothes}', '${boxId}')">Sport/Clothing Store</button>
